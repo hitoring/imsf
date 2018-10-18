@@ -4,6 +4,10 @@
  * @author  Peng Zhang
  * @version V1.0.0
  * @date    2017-06-09
+ * @note    This file is based on PSINS library written by Prof. Gongmin Yan @ NWPU, 
+            great thanks and respect to Prof. Yan!
+ * @note    This file is based on PSINS library written by Prof. Gongmin Yan @ NWPU, 
+            great thanks and respect to Prof. Yan!
  * @brief   This file defines a 3-dimension double vector class 
             for intelligent multi-sensor fusion library.
  *********************************************************************************************************
