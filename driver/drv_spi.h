@@ -10,7 +10,7 @@
 
 /* Define to prevent recursive inclusion -------------------------------------*/
 #ifndef __DRV_SPI_H__
-#define	__DRV_SPI_H__
+#define __DRV_SPI_H__
 
 #ifdef __cplusplus
  extern "C" {
@@ -21,17 +21,17 @@
 #include "stm32f30x_spi.h"
 #include "stdint.h"
 
-/* Exported types ------------------------------------------------------------*/	 
+/* Exported types ------------------------------------------------------------*/     
 /* Exported constants --------------------------------------------------------*/
-/* Exported macro ------------------------------------------------------------*/	 
+/* Exported macro ------------------------------------------------------------*/     
 #define ICM20602_FLAG_TIMEOUT             ((uint32_t)0x1000)
-	 
+     
 /*ICM20602 SPI Interface pins
-	CSn   --------  PA15 (14) ------   SPI1_NSS
-	CLK   --------  PB3 (39)  ------   SPI1_SCK
-	MISO  --------  PB4 (40)  ------   SPI1_MISO
-	MOSI  --------  PB5 (41)  ------   SPI1_MOSI
-*/	 
+    CSn   --------  PA15 (14) ------   SPI1_NSS
+    CLK   --------  PB3 (39)  ------   SPI1_SCK
+    MISO  --------  PB4 (40)  ------   SPI1_MISO
+    MOSI  --------  PB5 (41)  ------   SPI1_MOSI
+*/   
 #define ICM20602_SPI                       SPI1
 #define ICM20602_SPI_CLK                   RCC_APB2Periph_SPI1
 
@@ -54,7 +54,7 @@
 #define ICM20602_SPI_MOSI_AF               GPIO_AF_5
 
 #define ICM20602_SPI_CS_PIN                GPIO_Pin_15                  /* PA.15 */
-#define ICM20602_SPI_CS_GPIO_PORT          GPIOA                       	/* GPIOA */
+#define ICM20602_SPI_CS_GPIO_PORT          GPIOA                        /* GPIOA */
 #define ICM20602_SPI_CS_GPIO_CLK           RCC_AHBPeriph_GPIOA
 
 /* Exported variables --------------------------------------------------------*/

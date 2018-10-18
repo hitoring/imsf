@@ -38,51 +38,51 @@ namespace imsf {
 class Matrix3d 
 {
 public:
-	/* Member variables */
-	Vector3d a; // first row of the 3x3 double matrix
-	Vector3d b; // second row of the 3x3 double matrix
-	Vector3d c; // third row of the 3x3 double matrix
+    /* Member variables */
+    Vector3d a; // first row of the 3x3 double matrix
+    Vector3d b; // second row of the 3x3 double matrix
+    Vector3d c; // third row of the 3x3 double matrix
 
-	/* Constructors */
-	Matrix3d(void);
-	Matrix3d(const double s);
-	Matrix3d(double ax, double ay, double az, 
-		        double bx, double by, double bz,
-		        double cx, double cy, double cz);
-	Matrix3d(const Vector3d& v0, const Vector3d& v1, const Vector3d& v2);
-	Matrix3d(const double* a0, const double* a1, const double* a2);
-	Matrix3d(const double (*array)[3]);
+    /* Constructors */
+    Matrix3d(void);
+    Matrix3d(const double s);
+    Matrix3d(double ax, double ay, double az, 
+                double bx, double by, double bz,
+                double cx, double cy, double cz);
+    Matrix3d(const Vector3d& v0, const Vector3d& v1, const Vector3d& v2);
+    Matrix3d(const double* a0, const double* a1, const double* a2);
+    Matrix3d(const double (*array)[3]);
 
-	/* Destructor */
-	~Matrix3d();
+    /* Destructor */
+    ~Matrix3d();
 
-	/* Member functions */
-	Matrix3d operator+(const Matrix3d& m) const;
-	Matrix3d operator+(double s) const;
-	Matrix3d operator-(const Matrix3d& m) const;
-	Matrix3d operator-(double s) const;
-	Matrix3d operator*(const Matrix3d& m) const;
-	Vector3d operator*(const Vector3d& v) const;
-	Matrix3d operator*(double s) const;
-	Matrix3d operator/(double s) const;
-	Matrix3d& operator+=(const Matrix3d& m);
-	Matrix3d& operator+=(double s);
-	Matrix3d& operator-=(const Matrix3d& m);
-	Matrix3d& operator-=(double s);
-	Matrix3d& operator*=(double s);
-	Matrix3d& operator/=(double s);
-	Vector3d GetRow(int i);
-	Vector3d GetClm(int j);
-	double operator()(int i, int j);
+    /* Member functions */
+    Matrix3d operator+(const Matrix3d& m) const;
+    Matrix3d operator+(double s) const;
+    Matrix3d operator-(const Matrix3d& m) const;
+    Matrix3d operator-(double s) const;
+    Matrix3d operator*(const Matrix3d& m) const;
+    Vector3d operator*(const Vector3d& v) const;
+    Matrix3d operator*(double s) const;
+    Matrix3d operator/(double s) const;
+    Matrix3d& operator+=(const Matrix3d& m);
+    Matrix3d& operator+=(double s);
+    Matrix3d& operator-=(const Matrix3d& m);
+    Matrix3d& operator-=(double s);
+    Matrix3d& operator*=(double s);
+    Matrix3d& operator/=(double s);
+    Vector3d GetRow(int i);
+    Vector3d GetClm(int j);
+    double operator()(int i, int j);
     void SetZero(void);
     void SetIdentity(void);
     Vector3d GetDiag(void) const;
     void SetDiag(const Vector3d& v);
     void SetAskew(const Vector3d& v);
 
-	/* Friend functions */
-	Matrix3d operator-(const Matrix3d& m);
-	Matrix3d operator~(const Matrix3d& m);
+    /* Friend functions */
+    Matrix3d operator-(const Matrix3d& m);
+    Matrix3d operator~(const Matrix3d& m);
 };
 
 namespace Matrix3d_ {

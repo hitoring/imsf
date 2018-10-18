@@ -39,10 +39,10 @@ class Quaterniond
 {
 public:
     /* Member variables */
-	double q0, q1, q2, q3;
+    double q0, q1, q2, q3;
 
     /* Constructors */
-	Quaterniond(void);
+    Quaterniond(void);
     Quaterniond(const double w, const double x, const double y, const double z);
     Quaterniond(const double* array);
 
@@ -50,9 +50,9 @@ public:
     ~Quaterniond();
 
     /* Member functions */
-	Quaterniond operator+(const Vector3d& phi) const;	// true quaternion add misalign angles
+    Quaterniond operator+(const Vector3d& phi) const;   // true quaternion add misalign angles
     Quaterniond& operator+=(const Vector3d& phi);
-    Quaterniond operator-(const Vector3d& phi) const;	// calculated quaternion delete misalign angles
+    Quaterniond operator-(const Vector3d& phi) const;   // calculated quaternion delete misalign angles
     Quaterniond& operator-=(const Vector3d& phi);
     Vector3d operator-(Quaterniond& quat) const;
     Quaterniond operator*(const Quaterniond& quat) const; // quaternion multiplication
@@ -64,7 +64,7 @@ public:
     void Update(const Vector3d& rv); // quaternion update
 
     /* Friend functions */
-	friend Quaterniond operator~(const Quaterniond& quat);		// quaternion conjugate
+    friend Quaterniond operator~(const Quaterniond& quat);      // quaternion conjugate
 };
 
 namespace Quaterniond_ {

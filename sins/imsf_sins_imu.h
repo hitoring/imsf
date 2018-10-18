@@ -39,26 +39,26 @@ class IMU
 public:
     /* Member variables */
     int updated_; // flag for IMU data updated or not
-	int subsamples_; // subsample number
-	double sub_ts_;
-	double time_;
-	Vector3d phim_; // rotation vector after coning compensation
-	Vector3d dvbm_; // velocity increment after rotation & sculling compensation
-	Vector3d delta_angle_prev_; // last angular increment
-	Vector3d delta_vel_prev_; // last velocity increment
-	Vector3d dphim_; // attitude coning error
-	Vector3d rotm_; // velocity rotation error
-	Vector3d scullm_; // velocity sculling error
+    int subsamples_; // subsample number
+    double sub_ts_;
+    double time_;
+    Vector3d phim_; // rotation vector after coning compensation
+    Vector3d dvbm_; // velocity increment after rotation & sculling compensation
+    Vector3d delta_angle_prev_; // last angular increment
+    Vector3d delta_vel_prev_; // last velocity increment
+    Vector3d dphim_; // attitude coning error
+    Vector3d rotm_; // velocity rotation error
+    Vector3d scullm_; // velocity sculling error
 
     /* Constructors */
-	IMU(void);
+    IMU(void);
     
     /* Destructor */
-	~IMU();
+    ~IMU();
 
     /* Member functions */
     void Init(const int subsamples, const double sub_ts);
-	void Update(const Vector3d* delta_angle, const Vector3d* delta_vel);
+    void Update(const Vector3d* delta_angle, const Vector3d* delta_vel);
 };
 
 

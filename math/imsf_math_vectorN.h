@@ -41,35 +41,35 @@ class VectorNd
 {
 public:
     /* Member variables */
-	int dim_;
-	double data_[kMatrixVectorMaxDim];
+    int dim_;
+    double data_[kMatrixVectorMaxDim];
 
     /* Constructors */
-	VectorNd(void);
-	VectorNd(int dim);
-	VectorNd(int dim, double s);
-	VectorNd(int dim, const double* array);
+    VectorNd(void);
+    VectorNd(int dim);
+    VectorNd(int dim, double s);
+    VectorNd(int dim, const double* array);
 
     /* Destructor */
     ~VectorNd();
 
     /* Member functions */
-	VectorNd operator+(const VectorNd& v) const;
-	VectorNd operator+(double s) const;
-	VectorNd operator-(const VectorNd& v) const;
-	VectorNd operator-(double s) const;
-	VectorNd operator*(const MatrixNd& m) const;
-	MatrixNd operator*(const VectorNd& v) const;
-	VectorNd operator*(double s) const;
-	VectorNd operator/(double s) const;
-	VectorNd& operator+=(const VectorNd& v);
-	VectorNd& operator+=(double s);
-	VectorNd& operator-=(const VectorNd &v);
-	VectorNd& operator-=(double s);
-	VectorNd& operator*=(double s);
-	VectorNd& operator/=(double s);
-	double& operator()(int i) const;
-	double Dot(const VectorNd& v);
+    VectorNd operator+(const VectorNd& v) const;
+    VectorNd operator+(double s) const;
+    VectorNd operator-(const VectorNd& v) const;
+    VectorNd operator-(double s) const;
+    VectorNd operator*(const MatrixNd& m) const;
+    MatrixNd operator*(const VectorNd& v) const;
+    VectorNd operator*(double s) const;
+    VectorNd operator/(double s) const;
+    VectorNd& operator+=(const VectorNd& v);
+    VectorNd& operator+=(double s);
+    VectorNd& operator-=(const VectorNd &v);
+    VectorNd& operator-=(double s);
+    VectorNd& operator*=(double s);
+    VectorNd& operator/=(double s);
+    double& operator()(int i) const;
+    double Dot(const VectorNd& v);
     double GetNorm(void);
     int Normlize(void);
     Vector3d GetVector3d(const int i) const;
@@ -77,7 +77,7 @@ public:
     void SetZero(void);
 
     /* Friend functions */
-	friend VectorNd operator-(const VectorNd& v);
+    friend VectorNd operator-(const VectorNd& v);
 
 };
 

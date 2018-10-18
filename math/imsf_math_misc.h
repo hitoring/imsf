@@ -41,7 +41,7 @@ public:
     double Re;
     double wie;
     double g;
-	double mg;
+    double mg;
     double ug;
     double deg;
     double min;
@@ -49,7 +49,7 @@ public:
     double hour;
     double ppm;
     double ppmpsh;
-	double dps;
+    double dps;
     double dph;
     double dpsh;
     double dphpsh;
@@ -59,7 +59,7 @@ public:
     double mpspsh;
     double secpsh;
 
-	Unit(void);
+    Unit(void);
 };
 
 

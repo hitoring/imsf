@@ -36,7 +36,7 @@ namespace imsf {
 const int kMatrixVectorMaxDim = 15;
 const double kPI  = 3.1415926535897932;
 const double kEPS = 2.220446049e-16;
-const double kINF =	3.402823466e+30;
+const double kINF = 3.402823466e+30;
 const Unit unit;
 
 
@@ -52,7 +52,7 @@ Unit::Unit(void)
     sec = min/60.0;
     ppm = 1.0e-6;
     hour = 3600.0;
-	dps = deg/1.0;
+    dps = deg/1.0;
     dph = deg/hour;
     dpsh = deg/sqrt(hour);
     dphpsh = dph/sqrt(hour);
@@ -66,12 +66,12 @@ Unit::Unit(void)
 
 inline double DegToRad(double deg)
 {
-	return (deg / 180.0 * kPI);
+    return (deg / 180.0 * kPI);
 }
 
 inline double RadToDeg(double rad)
 {
-	return (rad * 180.0 / kPI);
+    return (rad * 180.0 / kPI);
 }
 
 /*
@@ -82,21 +82,21 @@ inline double RadToDeg(double rad)
  */
 double Constraind(double x, double min, double max)
 {
-	if (isnan(x))
-	{
-		return ((min + max) / 2.0f);
-	}
-	
-	if (x > max)
-	{
-		return max;
-	}
-	else if (x < min)
-	{
-		return min;
-	}
-	
-	return x;
+    if (isnan(x))
+    {
+        return ((min + max) / 2.0f);
+    }
+    
+    if (x > max)
+    {
+        return max;
+    }
+    else if (x < min)
+    {
+        return min;
+    }
+    
+    return x;
 }
 
 /*
@@ -107,16 +107,16 @@ double Constraind(double x, double min, double max)
  */
 double WrapRad(double rad)
 {
-	if (rad > kPI)
-	{
-		rad -= 2*kPI;
-	}
-	else if (rad < -kPI)
-	{
-		rad += 2*kPI;
-	}
+    if (rad > kPI)
+    {
+        rad -= 2*kPI;
+    }
+    else if (rad < -kPI)
+    {
+        rad += 2*kPI;
+    }
 
-	return rad;
+    return rad;
 }
 
 /*
@@ -127,16 +127,16 @@ double WrapRad(double rad)
  */
 double WrapDeg(double deg)
 {
-	if (deg > 180.0f)
-	{
-		deg -= 360.0f;
-	}
-	else if (deg < -180.0f)
-	{
-		deg += 360.0f;
-	}
-	
-	return deg;
+    if (deg > 180.0f)
+    {
+        deg -= 360.0f;
+    }
+    else if (deg < -180.0f)
+    {
+        deg += 360.0f;
+    }
+    
+    return deg;
 }
 
 /*
@@ -149,14 +149,14 @@ double WrapDeg(double deg)
 double LinearInterpolate(double x, double x0, double x1, double y0, double y1)
 {
     if (x <= x0)
-	{
+    {
         return y0;
     }
     if (x >= x1)
-	{
+    {
         return y1;
     }
-	/* calculate the slope */
+    /* calculate the slope */
     double slope = (x - x0) / (x1 - x0);
     return (y0 + slope * (y1 - y0));
 }

@@ -37,56 +37,56 @@ namespace imsf {
 class MatrixNd
 {
 public:
-	/* Member variables */
-	int row_;
-	int clm_;
-	double data_[kMatrixVectorMaxDim][kMatrixVectorMaxDim];
+    /* Member variables */
+    int row_;
+    int clm_;
+    double data_[kMatrixVectorMaxDim][kMatrixVectorMaxDim];
 
-	/* Constructors */
-	MatrixNd(void);
-	MatrixNd(int row, int clm);
-	MatrixNd(int row, int clm, double s);
+    /* Constructors */
+    MatrixNd(void);
+    MatrixNd(int row, int clm);
+    MatrixNd(int row, int clm, double s);
 
-	/* Destructor */
-	~MatrixNd();
+    /* Destructor */
+    ~MatrixNd();
 
-	/* Member functions */
-	MatrixNd operator+(const MatrixNd& m) const;
-	MatrixNd operator+(const VectorNd& v) const;
-	MatrixNd operator+(double s) const;
-	MatrixNd operator-(const MatrixNd& m) const;
-	MatrixNd operator-(const VectorNd& v) const;
-	MatrixNd operator-(double s) const;
-	MatrixNd operator*(const MatrixNd& m) const;
-	VectorNd operator*(const VectorNd& v) const;
-	MatrixNd operator*(double s) const;
-	MatrixNd operator/(double s) const;
-	MatrixNd& operator+=(const MatrixNd& m);
-	MatrixNd& operator+=(const VectorNd& v);
-	MatrixNd& operator+=(double s);
-	MatrixNd& operator-=(const MatrixNd& m);
-	MatrixNd& operator-=(const VectorNd& v);
-	MatrixNd& operator-=(double s);
-	MatrixNd& operator*=(double s);
-	MatrixNd& operator/=(double s);
-	double& operator()(int row, int clm);
-	void Symmetry(void);
-	void SetRow(int i, const VectorNd& v);
-	void SetClm(int j, const VectorNd& v);
-	void SetMatrix3d(int i, int j, const Matrix3d& m);
-	VectorNd GetRow(int i) const;
-	VectorNd GetClm(int j) const;
-	Matrix3d GetMatrix3d(int i, int j) const;
-	void ZeroRow(int i);
-	void ZeroClm(int j);
+    /* Member functions */
+    MatrixNd operator+(const MatrixNd& m) const;
+    MatrixNd operator+(const VectorNd& v) const;
+    MatrixNd operator+(double s) const;
+    MatrixNd operator-(const MatrixNd& m) const;
+    MatrixNd operator-(const VectorNd& v) const;
+    MatrixNd operator-(double s) const;
+    MatrixNd operator*(const MatrixNd& m) const;
+    VectorNd operator*(const VectorNd& v) const;
+    MatrixNd operator*(double s) const;
+    MatrixNd operator/(double s) const;
+    MatrixNd& operator+=(const MatrixNd& m);
+    MatrixNd& operator+=(const VectorNd& v);
+    MatrixNd& operator+=(double s);
+    MatrixNd& operator-=(const MatrixNd& m);
+    MatrixNd& operator-=(const VectorNd& v);
+    MatrixNd& operator-=(double s);
+    MatrixNd& operator*=(double s);
+    MatrixNd& operator/=(double s);
+    double& operator()(int row, int clm);
+    void Symmetry(void);
+    void SetRow(int i, const VectorNd& v);
+    void SetClm(int j, const VectorNd& v);
+    void SetMatrix3d(int i, int j, const Matrix3d& m);
+    VectorNd GetRow(int i) const;
+    VectorNd GetClm(int j) const;
+    Matrix3d GetMatrix3d(int i, int j) const;
+    void ZeroRow(int i);
+    void ZeroClm(int j);
     void SetZero(void);
     void SetIdentity(void);
     void SetDiag(const VectorNd& v);
     VectorNd GetDiag(void) const;
 
-	/* Friend functions */
-	friend MatrixNd operator~(const MatrixNd& m);
-	friend MatrixNd operator-(const MatrixNd& m);
+    /* Friend functions */
+    friend MatrixNd operator~(const MatrixNd& m);
+    friend MatrixNd operator-(const MatrixNd& m);
 };
 
 namespace MatrixNd_ {

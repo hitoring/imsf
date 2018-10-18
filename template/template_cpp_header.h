@@ -37,17 +37,17 @@ namespace imsf {
 class ClassExample
 {
 public:
-	/* Member variables */
-	
-	/* Constructors */
-	ClassExample(void);
-	
-	/* Destructor */
-	~ClassExample();
-	
-	/* Member functions */
-	void Init(void);
-	void Update(void);
+    /* Member variables */
+    
+    /* Constructors */
+    ClassExample(void);
+    
+    /* Destructor */
+    ~ClassExample();
+    
+    /* Member functions */
+    void Init(void);
+    void Update(void);
 };
 
 

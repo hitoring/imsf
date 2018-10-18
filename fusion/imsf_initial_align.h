@@ -40,15 +40,15 @@ class InitialAlign
 {
 public:
     /* Member variables */
-	EarthParam earth_param_;
-	IMU imu_;
+    EarthParam earth_param_;
+    IMU imu_;
 
-	double time_;
+    double time_;
     double nts_;
-	int t0, t1, t2;
-	Vector3d delta_angle_sum_, delta_vel_sum_; 
+    int t0, t1, t2;
+    Vector3d delta_angle_sum_, delta_vel_sum_; 
     Vector3d vib0, vi0, Pib01, Pib02, Pi01, Pi02, tmpPib0, tmpPi0;
-	Quaterniond qib0b;
+    Quaterniond qib0b;
 
     /* Constructors */
     InitialAlign(void);

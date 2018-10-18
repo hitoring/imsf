@@ -46,21 +46,21 @@ namespace imsf {
 
 typedef enum
 {
-	ERROR_STATE_ATT_X_ERR_IDX   = 0,
-	ERROR_STATE_ATT_Y_ERR_IDX   = 1,
-	ERROR_STATE_ATT_Z_ERR_IDX   = 2,
-	ERROR_STATE_VEL_X_ERR_IDX   = 3,
-	ERROR_STATE_VEL_Y_ERR_IDX   = 4,
-	ERROR_STATE_VEL_Z_ERR_IDX   = 5,
-	ERROR_STATE_POS_X_ERR_IDX   = 6,
-	ERROR_STATE_POS_Y_ERR_IDX   = 7,
-	ERROR_STATE_POS_Z_ERR_IDX   = 8,
-	ERROR_STATE_GYRO_X_BIAS_IDX = 9,
-	ERROR_STATE_GYRO_Y_BIAS_IDX = 10,
-	ERROR_STATE_GYRO_Z_BIAS_IDX = 11,
-	ERROR_STATE_ACC_X_BIAS_IDX  = 12,
-	ERROR_STATE_ACC_Y_BIAS_IDX  = 13,
-	ERROR_STATE_ACC_Z_BIAS_IDX  = 14
+    ERROR_STATE_ATT_X_ERR_IDX   = 0,
+    ERROR_STATE_ATT_Y_ERR_IDX   = 1,
+    ERROR_STATE_ATT_Z_ERR_IDX   = 2,
+    ERROR_STATE_VEL_X_ERR_IDX   = 3,
+    ERROR_STATE_VEL_Y_ERR_IDX   = 4,
+    ERROR_STATE_VEL_Z_ERR_IDX   = 5,
+    ERROR_STATE_POS_X_ERR_IDX   = 6,
+    ERROR_STATE_POS_Y_ERR_IDX   = 7,
+    ERROR_STATE_POS_Z_ERR_IDX   = 8,
+    ERROR_STATE_GYRO_X_BIAS_IDX = 9,
+    ERROR_STATE_GYRO_Y_BIAS_IDX = 10,
+    ERROR_STATE_GYRO_Z_BIAS_IDX = 11,
+    ERROR_STATE_ACC_X_BIAS_IDX  = 12,
+    ERROR_STATE_ACC_Y_BIAS_IDX  = 13,
+    ERROR_STATE_ACC_Z_BIAS_IDX  = 14
 }ErrorStateIndex;
 
 class OutputStates
@@ -81,29 +81,29 @@ class ErrorStateKalmanFilter
 {
 public:
     /* Member variables */
-	double time_;
+    double time_;
     int filter_initialized_;
-	KalmanFilter kf_;
-	SINS sins_;
+    KalmanFilter kf_;
+    SINS sins_;
     OutputStates output_states_;
-	
-	Vector3d att_err_;   // attitude error
-	Vector3d vel_err_;   // velocity error
-	Vector3d pos_err_;   // position error
-	Vector3d gyro_bias_; // gyroscope bias
-	Vector3d acc_bias_;  // accelerometer bias
-	
-	Vector3d att_err_var_;   // attitude error variance
-	Vector3d vel_err_var_;   // velocity error variance
-	Vector3d pos_err_var_;   // position error variance
-	Vector3d gyro_bias_var_; // gyroscope bias variance
-	Vector3d acc_bias_var_;  // accelerometer bias variance
+    
+    Vector3d att_err_;   // attitude error
+    Vector3d vel_err_;   // velocity error
+    Vector3d pos_err_;   // position error
+    Vector3d gyro_bias_; // gyroscope bias
+    Vector3d acc_bias_;  // accelerometer bias
+    
+    Vector3d att_err_var_;   // attitude error variance
+    Vector3d vel_err_var_;   // velocity error variance
+    Vector3d pos_err_var_;   // position error variance
+    Vector3d gyro_bias_var_; // gyroscope bias variance
+    Vector3d acc_bias_var_;  // accelerometer bias variance
 
     /* Constructors */
-	ErrorStateKalmanFilter(void);
+    ErrorStateKalmanFilter(void);
 
     /* Destructor */
-	~ErrorStateKalmanFilter();
+    ~ErrorStateKalmanFilter();
 
     /* Member functions */
     void Init(const Quaterniond& qnb0, const Vector3d& vn0, const Vector3d& pos0);

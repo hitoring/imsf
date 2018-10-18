@@ -21,14 +21,14 @@
 /* Exported types ------------------------------------------------------------*/
 typedef struct
 {
-	float b0;
-	float b1;
-	float b2;
-	float a1;
-	float a2;
-	float buf_data_1;
-	float buf_data_2;
-	float fc;
+    float b0;
+    float b1;
+    float b2;
+    float a1;
+    float a2;
+    float buf_data_1;
+    float buf_data_2;
+    float fc;
 }second_order_butterworth_lpf_t;
 /* Exported constants --------------------------------------------------------*/
 /* Exported macro ------------------------------------------------------------*/

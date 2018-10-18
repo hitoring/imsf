@@ -40,45 +40,45 @@ namespace imsf {
 class Vector3d 
 {
 public:
-	/* Member variables */
-	double x; // first element of the 3-dimension double vector
-	double y; // second element of the 3-dimension double vector
-	double z; // third element of the 3-dimension double vector
+    /* Member variables */
+    double x; // first element of the 3-dimension double vector
+    double y; // second element of the 3-dimension double vector
+    double z; // third element of the 3-dimension double vector
 
-	/* Constructors */
-	Vector3d(void);
-	Vector3d(const double s);
-	Vector3d(double x0, double y0, double z0);
-	Vector3d(const double *array);
+    /* Constructors */
+    Vector3d(void);
+    Vector3d(const double s);
+    Vector3d(double x0, double y0, double z0);
+    Vector3d(const double *array);
 
-	/* Destructor */
-	~Vector3d();
+    /* Destructor */
+    ~Vector3d();
 
-	/* Member functions */
-	Vector3d operator+(const Vector3d& v) const; 
-	Vector3d operator+(double s) const;
-	Vector3d operator-(const Vector3d& v) const;
-	Vector3d operator-(double s) const;
-	Vector3d operator*(const Matrix3d& m) const;
-	Matrix3d operator*(const Vector3d& v) const;
-	Vector3d operator*(double s) const;
-	Vector3d operator/(double s) const;
-	Vector3d& operator+=(const Vector3d& v);
-	Vector3d& operator+=(double s);
-	Vector3d& operator-=(const Vector3d& v);
-	Vector3d& operator-=(double s);
-	Vector3d& operator*=(double s);
-	Vector3d& operator/=(double s);
-	double operator()(int i);
-	double Dot(const Vector3d& v);
-	Vector3d Cross(const Vector3d& v);
-	double GetNorm(void) const;
-	int Normlize(void);
+    /* Member functions */
+    Vector3d operator+(const Vector3d& v) const; 
+    Vector3d operator+(double s) const;
+    Vector3d operator-(const Vector3d& v) const;
+    Vector3d operator-(double s) const;
+    Vector3d operator*(const Matrix3d& m) const;
+    Matrix3d operator*(const Vector3d& v) const;
+    Vector3d operator*(double s) const;
+    Vector3d operator/(double s) const;
+    Vector3d& operator+=(const Vector3d& v);
+    Vector3d& operator+=(double s);
+    Vector3d& operator-=(const Vector3d& v);
+    Vector3d& operator-=(double s);
+    Vector3d& operator*=(double s);
+    Vector3d& operator/=(double s);
+    double operator()(int i);
+    double Dot(const Vector3d& v);
+    Vector3d Cross(const Vector3d& v);
+    double GetNorm(void) const;
+    int Normlize(void);
     void SetZero(void);
     void SetInf(void);
 
-	/* Friend funstions */
-	friend Vector3d operator-(const Vector3d& v);
+    /* Friend funstions */
+    friend Vector3d operator-(const Vector3d& v);
 };
 
 namespace Vector3d_ {
