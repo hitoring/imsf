@@ -4,8 +4,6 @@
  * @author  Peng Zhang
  * @version V1.0.0
  * @date    2017-06-09
- * @note    This file is based on PSINS library written by Prof. Gongmin Yan @ NWPU, 
-            great thanks and respect to Prof. Yan!
  * @brief   This file defines some member functions of InitialAlign class
             for intelligent multi-sensor fusion library.
  *********************************************************************************************************
@@ -100,7 +98,7 @@ Quaterniond InitialAlign::Update(const Vector3d* delta_angle, const Vector3d* de
     }
     else if(t2<1000)
     {
-        qnb = AngleToQuat(AlignCoarse(delta_angle_sum_, delta_vel_sum_, earth_param_.pos_.x));
+        qnb = AlignCoarse(delta_angle_sum_, delta_vel_sum_, earth_param_.pos_.x);
     }
     else
     {
@@ -109,7 +107,7 @@ Quaterniond InitialAlign::Update(const Vector3d* delta_angle, const Vector3d* de
     return qnb;
 }
 
-Vector3d AlignCoarse(Vector3d delta_angle_sum, Vector3d delta_vel_sum, double latitude)
+Quaterniond AlignCoarse(Vector3d delta_angle_sum, Vector3d delta_vel_sum, double latitude)
 {
     double T11, T12, T13, T21, T22, T23, T31, T32, T33;
     double cl = cos(latitude), tl = tan(latitude), nn;
@@ -119,7 +117,7 @@ Vector3d AlignCoarse(Vector3d delta_angle_sum, Vector3d delta_vel_sum, double la
     T21 = wbib.x/cl-T31*tl,  T22 = wbib.y/cl-T32*tl,    T23 = wbib.z/cl-T33*tl;     nn = sqrt(T21*T21+T22*T22+T23*T23);  T21 /= nn, T22 /= nn, T23 /= nn;
     T11 = T22*T33-T23*T32,   T12 = T23*T31-T21*T33,     T13 = T21*T32-T22*T31;      nn = sqrt(T11*T11+T12*T12+T13*T13);  T11 /= nn, T12 /= nn, T13 /= nn;
     Matrix3d Cnb(T11, T12, T13, T21, T22, T23, T31, T32, T33);
-    return DCMToAngle(Cnb);
+    return DCMToQuat(Cnb);
 }
 
 } /* namspace imsf */

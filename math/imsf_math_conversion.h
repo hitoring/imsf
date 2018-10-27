@@ -1,19 +1,17 @@
 /*
  *********************************************************************************************************
- * @file    imsf_math_rotation.h
+ * @file    imsf_math_conversion.h
  * @author  Peng Zhang
  * @version V1.0.0
  * @date    2017-06-09
- * @note    This file is based on PSINS library written by Prof. Gongmin Yan @ NWPU, 
-            great thanks and respect to Prof. Yan!
  * @brief   This file provides some conversion functions of rotation representation
             for intelligent multi-sensor fusion library.
  *********************************************************************************************************
  */
 
 /* Define to prevent recursive inclusion ----------------------------------------------------------------*/
-#ifndef IMSF_MATH_ROTATION_H_
-#define IMSF_MATH_ROTATION_H_
+#ifndef IMSF_MATH_CONVERSION_H_
+#define IMSF_MATH_CONVERSION_H_
 
 /*
  *********************************************************************************************************
@@ -49,7 +47,7 @@ Matrix3d PosToCen(const Vector3d& pos);
 
 } /* namespace imsf */
 
-#endif /* IMSF_MATH_ROTATION_H_ */
+#endif /* IMSF_MATH_CONVERSION_H_ */
 
 /************************************* (C) COPYRIGHT 2017 PENG ZHANG ******************END OF FILE********/
 
